@@ -1,0 +1,79 @@
+﻿<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+
+  <title>JSONEditor | appSettingsClass.ClassName</title>
+
+  <link href='jsoneditor.css' rel='stylesheet' type='text/css'>
+  <script src='jsoneditor.js'></script>
+
+  <style type='text/css'>
+    #jsoneditor {
+      width: 500px;
+      height: 500px;
+    }
+  </style>
+</head>
+<body onload="LoadStart()">
+    <p>
+        <button id='loadJSON'>Load appSettingsClass.ClassName</button>
+        <button id='saveJSON'>Save appSettingsClass.ClassName</button>
+    </p>
+    <div id='jsoneditor'></div>
+
+    <script>
+
+        var editor;
+        function LoadStart() {
+            // create the editor
+            const container = document.getElementById('jsoneditor');
+            const options = {};
+            editor = new JSONEditor(container, options);
+            const json =
+            {
+                'Data': 'Loading appSettingsClass.ClassName'
+            }
+            editor.set(json);
+            LoadData();
+        }
+        function LoadData() {
+
+            // set json
+            var oReq = new XMLHttpRequest();
+            oReq.onload = function (e) {
+                var rest = oReq.response; // not responseText
+                var data = JSON.parse(rest);
+                editor.set(data);
+
+
+            }
+            oReq.open("GET", "endpointAPISettings");
+            oReq.responseType = "text/html";
+            oReq.send();
+
+        }
+        function SaveData() {
+            const json = editor.get();
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function (e) {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    window.alert(xhr.responseText);
+                }
+            };
+            xhr.responseType = 'text/html';
+            xhr.open('POST', 'endpointAPISettings');
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify(json, null, 2));
+
+        }
+
+        document.getElementById('loadJSON').onclick = LoadData;
+        document.getElementById('saveJSON').onclick = SaveData;
+
+
+    </script>
+
+
+</body>
+</html>

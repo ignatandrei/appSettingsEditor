@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="settingsUI\img\jsoneditor-icons.svg" />
+    <None Remove="settingsUI\index.html" />
+    <None Remove="settingsUI\jsoneditor.css" />
+    <None Remove="settingsUI\jsoneditor.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\appSettingEditorAPI\Json2Class\EmbeddedResource.cs" Link="EmbeddedResource.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="settingsUI\img\jsoneditor-icons.svg" />
+    <EmbeddedResource Include="settingsUI\jsoneditor.css" />
+    <EmbeddedResource Include="settingsUI\jsoneditor.js" />
+    <EmbeddedResource Include="settingsUI\index.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+
+  </ItemGroup>
+</Project>
