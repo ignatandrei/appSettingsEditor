@@ -44,6 +44,7 @@
     <!-- Package the generator in the analyzer directory of the nuget package -->
     <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
     <None Include="$(PkgScriban)\lib\netstandard2.0\*.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+    <None Include="$(PKGSystem_Text_Json)\lib\netstandard2.0\*.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
   </ItemGroup>
   <PropertyGroup>
     <Description>
@@ -77,7 +78,7 @@
       
 
     </Description>
-    <Version>2021.3.21.1312</Version>
+    <Version>2021.3.21.1400</Version>
     <Authors>Andrei Ignat</Authors>
     <PackageTags>RoslynCodeGenerators;C#;CSharp;appsettings</PackageTags>
     <PackageProjectUrl>https://github.com/ignatandrei/appSettingsEditor</PackageProjectUrl>
