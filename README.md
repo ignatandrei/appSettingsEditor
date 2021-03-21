@@ -6,11 +6,15 @@ app settings editor - powered by Roslyn
 
       Autogenerates controller API for appsettings.json
       Add 2 NUGET  references:
+
       appSettingEditorAPI
       appSettingsEditor
 
 	The csproj looks like this
-	```xml
+	
+	
+```xml
+	
 <ItemGroup>
 	<AdditionalFiles Include="appsettings.json">
 		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -21,30 +25,33 @@ app settings editor - powered by Roslyn
 	<CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)Generated</CompilerGeneratedFilesOutputPath>
 </PropertyGroup>
 
-	```
+```
 
       If you want to see a GUI for settings , please do
-	  ```csharp
-      app.UseEndpoints(endpoints =>
-      {
-      endpoints.MapControllers(); // add next line
-      endpoints.MapSettingsView <appsettings>(Configuration);
-      });
+	
+```csharp
+app.UseEndpoints(endpoints =>
+{
+endpoints.MapControllers(); // add next line
+endpoints.MapSettingsView <appsettings>(Configuration);
+});
+```
 
       If you want to handle security, add
 
-      public partial class appsettingsController : ControllerBase
-      {
-      //private partial void BeforeGet(appsettings data)
-      //{
+```csharp
+public partial class appsettingsController : ControllerBase
+{
+//private partial void BeforeGet(appsettings data)
+//{
 
-      //}
-      //private partial void BeforeSave(appsettings data, appsettings original)
-      //{
+//}
+//private partial void BeforeSave(appsettings data, appsettings original)
+//{
 
-      //}
+//}
 
-      }
-	  ```
+}
+```
 	  
       
