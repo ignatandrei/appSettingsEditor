@@ -42,10 +42,11 @@ namespace {{ NamespaceName }}
             {{ end }}
         }
         {{ for Property in ClassModel.Properties }}
+        [System.Text.Json.Serialization.JsonPropertyName("{{Property.PropertyNameOriginal}}")]
         public {{ Property.PropertyType }} {{ Property.PropertyName }} { get; set; }
         {{ end }}
         public  {{ ClassModel.ClassName }} LoadFromConfig(IConfiguration config)
-        {
+        { 
             {{ if ClassModel.path.size > 0  }}
                 config.GetSection("{{ ClassModel.path }}").Bind(this);
                 return this;

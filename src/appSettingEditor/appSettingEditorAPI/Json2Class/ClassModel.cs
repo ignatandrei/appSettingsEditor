@@ -52,7 +52,7 @@ namespace RoslynSettingEditor
         /// <summary>
         /// The name of the class, that should be valid in C#.
         /// </summary>
-        public string ClassName { get; set; }
+        public string ClassName { get; private set; }
 
         /// <summary>
         /// The properties that can be generated inside the class.
