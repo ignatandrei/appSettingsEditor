@@ -64,7 +64,7 @@
 
 
     </Description>
-    <Version>2021.3.21.1100</Version>
+    <Version>2021.3.21.1312</Version>
     <Authors>Andrei Ignat</Authors>
     <PackageTags>RoslynCodeGenerators;C#;CSharp;appsettings</PackageTags>
     <PackageProjectUrl>https://github.com/ignatandrei/appSettingsEditor</PackageProjectUrl>

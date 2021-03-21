@@ -9,11 +9,26 @@ app settings editor - powered by Roslyn
       appSettingEditorAPI
       appSettingsEditor
 
+	The csproj looks like this
+	```xml
+<ItemGroup>
+	<AdditionalFiles Include="appsettings.json">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</AdditionalFiles>
+</ItemGroup>
+<PropertyGroup>
+	<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+	<CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)Generated</CompilerGeneratedFilesOutputPath>
+</PropertyGroup>
+
+	```
+
       If you want to see a GUI for settings , please do
+	  ```csharp
       app.UseEndpoints(endpoints =>
       {
       endpoints.MapControllers(); // add next line
-      endpoints.MapSettingsView &lt; appsettings &gt;(Configuration);
+      endpoints.MapSettingsView <appsettings>(Configuration);
       });
 
       If you want to handle security, add
@@ -30,4 +45,6 @@ app settings editor - powered by Roslyn
       //}
 
       }
+	  ```
+	  
       
