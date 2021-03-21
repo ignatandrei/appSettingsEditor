@@ -20,26 +20,30 @@ namespace {{ NamespaceName }}.SettingsJson
     public partial class {{ ClassModel.ClassName }}: IAppSettingsConfig<{{ ClassModel.ClassName }}> 
     {
         public object GetFromPropertyName(string propName, bool returnNull =false){
-            if(propName != null){
-                propName=propName.ToUpper();
             
-                switch(propName){
-                    {{ for Property in ClassModel.Properties }}
-                    case "{{ Property.PropertyName  | string.upcase }}":
-                        return this.{{ Property.PropertyName }} ;
+            propName=propName?.ToUpper();
+            
+            switch(propName){
+                {{ for Property in ClassModel.Properties }}
+                case "{{ Property.PropertyName  | string.upcase }}":
+                    return this.{{ Property.PropertyName }} ;
                 {{ end }}
-                }
-            }
-            if(returnNull)
-                return null;
+                default:
+                    if(returnNull)
+                        return null;
 
-            throw new ArgumentException("cannot found from {{ ClassModel.ClassName }} prop "+propName);
+                    throw new ArgumentException("cannot found from {{ ClassModel.ClassName }} prop "+propName);            
+
+            }
+            
+            
         }
 
         public IEnumerable<string> Properties(){
             {{ for Property in ClassModel.Properties }}
                 yield return "{{ Property.PropertyName }}" ;
             {{ end }}
+            yield break;
         }
         {{ for Property in ClassModel.Properties }}
         [System.Text.Json.Serialization.JsonPropertyName("{{Property.PropertyNameOriginal}}")]
