@@ -16,8 +16,8 @@ app settings editor - powered by Roslyn
 ```xml
 	
 <ItemGroup>
-    <PackageReference Include="appSettingsEditor" Version="2021.3.21.2000" />
-    <PackageReference Include="appSettingsEditorAPI" Version="2021.3.21.2000" />
+    <PackageReference Include="appSettingsEditor" Version="2021.3.21.2300" />
+    <PackageReference Include="appSettingsEditorAPI" Version="2021.3.21.2300" />
   	<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="generateAPI" />
     <AdditionalFiles Include="appsettings.json" generateAPI="true" >
     		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -45,11 +45,11 @@ endpoints.MapSettingsView <appsettings>(Configuration);
 ```csharp
 public partial class appsettingsController : ControllerBase
 {
-//private partial void BeforeGet(appsettings data)
+//partial void BeforeGet(appsettings data)
 //{
 
 //}
-//private partial void BeforeSave(appsettings data, appsettings original)
+//partial void BeforeSave(appsettings data, appsettings original)
 //{
 
 //}
