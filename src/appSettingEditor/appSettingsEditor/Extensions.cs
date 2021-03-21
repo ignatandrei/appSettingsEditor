@@ -50,9 +50,10 @@ namespace appSettingsEditor
             MapFile("settingsUI/jsoneditor.js", endpoint);
             MapFile("settingsUI/jsoneditor.css", endpoint);
             MapFile("settingsUI/img/jsoneditor-icons.svg", endpoint);
-            endpoint.MapGet("settingsUI", async cnt =>
+            endpoint.MapGet("settingsUI", cnt =>
             {
                 cnt.Response.Redirect("settingsUI/index.html");
+                return Task.CompletedTask;
             });
 
             endpoint.MapGet("settingsUI/index.html", async cnt =>

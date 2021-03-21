@@ -10,6 +10,9 @@
     <None Remove="settingsUI\jsoneditor.css" />
     <None Remove="settingsUI\jsoneditor.js" />
   </ItemGroup>
+  <PropertyGroup >
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
 
   <ItemGroup>
     <Compile Include="..\appSettingEditorAPI\Json2Class\EmbeddedResource.cs" Link="EmbeddedResource.cs" />
