@@ -16,10 +16,11 @@ app settings editor - powered by Roslyn
 ```xml
 	
 <ItemGroup>
-    <PackageReference Include="appSettingsEditor" Version="2021.3.21.1400" />
-    <PackageReference Include="appSettingsEditorAPI" Version="2021.3.21.1400" />
-  	<AdditionalFiles Include="appsettings.json">
-		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <PackageReference Include="appSettingsEditor" Version="2021.3.21.2000" />
+    <PackageReference Include="appSettingsEditorAPI" Version="2021.3.21.2000" />
+  	<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="generateAPI" />
+    <AdditionalFiles Include="appsettings.json" generateAPI="true" >
+    		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	</AdditionalFiles>
 </ItemGroup>
 <PropertyGroup>
@@ -29,7 +30,7 @@ app settings editor - powered by Roslyn
 
 ```
 
-      If you want to see a GUI for settings , please do
+If you want to see a GUI for settings , please do
 	
 ```csharp
 app.UseEndpoints(endpoints =>

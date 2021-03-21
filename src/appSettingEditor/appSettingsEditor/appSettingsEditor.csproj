@@ -40,31 +40,10 @@
       appSettingEditorAPI
       appSettingsEditor
 
-      If you want to see a GUI for settings , please do
-      app.UseEndpoints(endpoints =>
-      {
-      endpoints.MapControllers(); // add next line
-      endpoints.MapSettingsView &lt; appsettings &gt;(Configuration);
-      });
-
-      If you want to handle security, add
-
-      public partial class appsettingsController : ControllerBase
-      {
-      //private partial void BeforeGet(appsettings data)
-      //{
-
-      //}
-      //private partial void BeforeSave(appsettings data, appsettings original)
-      //{
-
-      //}
-
-      }
-
-
+      Please see https://github.com/ignatandrei/appsettingseditor for more details
+      
     </Description>
-    <Version>2021.3.21.1400</Version>
+    <Version>2021.3.21.2000</Version>
     <Authors>Andrei Ignat</Authors>
     <PackageTags>RoslynCodeGenerators;C#;CSharp;appsettings</PackageTags>
     <PackageProjectUrl>https://github.com/ignatandrei/appSettingsEditor</PackageProjectUrl>
