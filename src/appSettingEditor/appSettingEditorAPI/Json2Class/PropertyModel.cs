@@ -44,6 +44,10 @@ namespace RoslynSettingEditor
         public PropertyModel(string propertyNameOriginal, string propertyType, string propertyName, int order)
         {
             PropertyNameOriginal = propertyNameOriginal;
+            if (long.TryParse(propertyType, out var _))
+            {
+                propertyType = "Number_" + propertyType;
+            }
             PropertyType = propertyType;
             PropertyName = propertyName;
             Order = order;
