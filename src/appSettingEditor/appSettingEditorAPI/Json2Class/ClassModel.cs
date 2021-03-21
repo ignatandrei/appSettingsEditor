@@ -65,7 +65,7 @@ namespace RoslynSettingEditor
         /// <param name="className"></param>
         public ClassModel(string className, ClassModel parent)
         {
-            if (long.TryParse(className, out var _))
+            if (long.TryParse(className.Substring(0,1), out var _))
             {
                 className = "Number_" + className;
             }

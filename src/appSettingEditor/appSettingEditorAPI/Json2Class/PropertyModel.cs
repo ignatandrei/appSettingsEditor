@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Linq;
 
 namespace RoslynSettingEditor
 {
@@ -44,7 +45,7 @@ namespace RoslynSettingEditor
         public PropertyModel(string propertyNameOriginal, string propertyType, string propertyName, int order)
         {
             PropertyNameOriginal = propertyNameOriginal;
-            if (long.TryParse(propertyType, out var _))
+            if (long.TryParse(propertyType.Substring(0,1), out var _))
             {
                 propertyType = "Number_" + propertyType;
             }
