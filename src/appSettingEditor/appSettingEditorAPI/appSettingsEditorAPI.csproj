@@ -40,6 +40,47 @@
       
     </ItemGroup>
   </Target>
-  
+  <PropertyGroup>
+    <Description>
+      ** C# 9.0 ONLY **
+      Autogenerates controller API for appsettings.json
+      Add 2 NUGET  references:
+      appSettingEditorAPI
+      appSettingsEditor
+
+      If you want to see a GUI for settings , please do
+      app.UseEndpoints(endpoints =>
+      {
+      endpoints.MapControllers(); // add next line
+      endpoints.MapSettingsView &lt; appsettings &gt;(Configuration);
+      });
+
+      If you want to handle security, add
+
+      public partial class appsettingsController : ControllerBase
+      {
+      //private partial void BeforeGet(appsettings data)
+      //{
+
+      //}
+      //private partial void BeforeSave(appsettings data, appsettings original)
+      //{
+
+      //}
+
+      }
+      
+
+    </Description>
+    <Version>2021.3.21.1100</Version>
+    <Authors>Andrei Ignat</Authors>
+    <PackageTags>RoslynCodeGenerators;C#;CSharp;appsettings</PackageTags>
+    <PackageProjectUrl>https://github.com/ignatandrei/appSettingsEditor</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ignatandrei/appSettingsEditor</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>MIT</Copyright>
+
+  </PropertyGroup>  
 
 </Project>

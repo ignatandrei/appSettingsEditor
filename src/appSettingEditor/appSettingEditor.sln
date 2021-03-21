@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "appSettingEditorAPI", "appSettingEditorAPI\appSettingEditorAPI.csproj", "{95056D02-DBBF-47A9-BD61-4923D2DB9403}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "appSettingsEditorAPI", "appSettingEditorAPI\appSettingsEditorAPI.csproj", "{95056D02-DBBF-47A9-BD61-4923D2DB9403}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "appSettingsEditor", "appSettingsEditor\appSettingsEditor.csproj", "{B2E9D2E4-1E2D-4752-9A9B-5264CC9BA2E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "appSettingsEditor", "appSettingsEditor\appSettingsEditor.csproj", "{B2E9D2E4-1E2D-4752-9A9B-5264CC9BA2E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEditor", "TestEditor\TestEditor.csproj", "{5BF8350F-2B78-42E8-9676-DDDCB4CBBA07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEditor", "TestEditor\TestEditor.csproj", "{5BF8350F-2B78-42E8-9676-DDDCB4CBBA07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

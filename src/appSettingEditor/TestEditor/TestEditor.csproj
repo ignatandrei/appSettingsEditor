@@ -7,12 +7,12 @@
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
-  <PropertyGroup >
+  <PropertyGroup>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\appSettingEditorAPI\appSettingEditorAPI.csproj" OutputItemType="Analyzer"/>
+    <ProjectReference Include="..\appSettingEditorAPI\appSettingsEditorAPI.csproj" OutputItemType="Analyzer" />
     <ProjectReference Include="..\appSettingsEditor\appSettingsEditor.csproj" />
     <AdditionalFiles Include="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
