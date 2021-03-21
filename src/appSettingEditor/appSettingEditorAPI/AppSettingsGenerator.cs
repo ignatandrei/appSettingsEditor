@@ -36,7 +36,7 @@ namespace appSettingEditorAPI
 
                     return (val == "true");
                 }
-                )
+                ).ToArray();
                 ;
 
             if (!allSettings.Any())
@@ -64,10 +64,10 @@ namespace appSettingEditorAPI
 
                 var g = new GeneratorFromJSON();
                 var generatedCode = g.GenerateFile(jsonFileText.ToString(), nameSettings, namespaceName, "appsettings.txt");
-                context.AddSource($"{nameSettings}.gen.cs", SourceText.From(generatedCode, Encoding.UTF8));
+                context.AddSource($"a{nameSettings}.gen.cs", SourceText.From(generatedCode, Encoding.UTF8));
 
                 generatedCode = g.GenerateFile(jsonFileText.ToString(), nameSettings, namespaceName, "Controller.txt");
-                context.AddSource($"{nameSettings}Controller.gen.cs", SourceText.From(generatedCode, Encoding.UTF8));
+                context.AddSource($"b{nameSettings}Controller.gen.cs", SourceText.From(generatedCode, Encoding.UTF8));
             }
         }
 
