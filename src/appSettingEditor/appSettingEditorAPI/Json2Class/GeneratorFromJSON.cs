@@ -270,7 +270,10 @@ namespace RoslynSettingEditor.Json2Class
                    newPropertyName = $"{newPropertyName}2";
                }
            }
-
+           if(long.TryParse(newPropertyName, out var _))
+            {
+                newPropertyName = "Number_" + newPropertyName;
+            }
            return newPropertyName;
        }
 

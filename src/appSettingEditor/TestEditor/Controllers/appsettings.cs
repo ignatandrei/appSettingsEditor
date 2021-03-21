@@ -9,14 +9,14 @@ namespace TestEditor.Controllers
 {
     public partial class appsettingsController : ControllerBase
     {
-        //private partial void BeforeGet(appsettings data)
-        //{
+        partial void BeforeGet(appsettings data)
+        {
+            string s = data.ToString();
+        }
+        partial void BeforeSave(appsettings data, appsettings original)
+        {
 
-        //}
-        //private partial void BeforeSave(appsettings data, appsettings original)
-        //{
-
-        //}
+        }
 
     }
 }

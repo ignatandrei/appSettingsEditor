@@ -62,12 +62,12 @@ namespace appSettingEditorAPI
                 //context.AddSource($"{nameSettings}.gen.cs", SourceText.From(generatedCode, Encoding.UTF8));
                 //var json = JsonDocument.Parse(jsonFileText.ToString());
 
-                var g = new GeneratorFromJSON();
+                var g = new GeneratorFromJSON(); 
                 var generatedCode = g.GenerateFile(jsonFileText.ToString(), nameSettings, namespaceName, "appsettings.txt");
-                context.AddSource($"a{nameSettings}.gen.cs", SourceText.From(generatedCode, Encoding.UTF8));
+                context.AddSource($"{nameSettings}.gen.cs", SourceText.From(generatedCode, Encoding.UTF8));
 
                 generatedCode = g.GenerateFile(jsonFileText.ToString(), nameSettings, namespaceName, "Controller.txt");
-                context.AddSource($"b{nameSettings}Controller.gen.cs", SourceText.From(generatedCode, Encoding.UTF8));
+                context.AddSource($"{nameSettings}Controller.gen.cs", SourceText.From(generatedCode, Encoding.UTF8));
             }
         }
 

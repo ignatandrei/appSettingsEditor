@@ -33,9 +33,21 @@ namespace {{ NamespaceName }}.Controllers
             settings = settings.LoadFromConfig(config);                        
             return settings;
         }
+        
+        private {{ appSettingsClass.ClassName }} LoadFromFile(string fileName){
+            var cnt= System.IO.File.ReadAllText(fileName);
+            var settings = System.Text.Json.JsonSerializer.Deserialize<{{appSettingsClass.ClassName}}>(cnt);
+            return settings;
+        }
+                 
+
         [HttpGet]
-        public {{ appSettingsClass.ClassName }} Get([FromServices]IConfiguration config){
-            var settings=LoadFromConfig(config);
+        public {{ appSettingsClass.ClassName }} Get([FromServices]IConfiguration config, bool FromFile=true){
+            {{ appSettingsClass.ClassName }} settings = null;
+            if(FromFile)
+                settings=LoadFromFile("{{fullNameFile}}.json");
+            else
+                settings=LoadFromConfig(config);
             BeforeGet(settings);
             return settings;
         }
