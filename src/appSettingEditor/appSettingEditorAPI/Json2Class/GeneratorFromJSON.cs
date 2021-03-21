@@ -31,8 +31,8 @@ namespace RoslynSettingEditor.Json2Class
                 nameFileNoExt = rootTypeName,
                 NamespaceName = namespaceName,
                 ClassModels = classModels,
-                ToolName = "AppSettings",
-                ToolVersion = "1.20",
+                ToolName = ThisAssembly.Info.Product,
+                ToolVersion = ThisAssembly.Info.Version,
                 appSettingsClass = appSettingsClass
             }, member => member.Name);
             return generatedCode;
