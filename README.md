@@ -16,7 +16,9 @@ app settings editor - powered by Roslyn
 ```xml
 	
 <ItemGroup>
-	<AdditionalFiles Include="appsettings.json">
+    <PackageReference Include="appSettingsEditor" Version="2021.3.21.1400" />
+    <PackageReference Include="appSettingsEditorAPI" Version="2021.3.21.1400" />
+  	<AdditionalFiles Include="appsettings.json">
 		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	</AdditionalFiles>
 </ItemGroup>
