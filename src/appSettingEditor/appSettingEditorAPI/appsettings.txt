@@ -15,7 +15,7 @@ using appSettingsEditor;
 namespace {{ NamespaceName }}
 {
 {{ for ClassModel in ClassModels }}
-    [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    //[global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("{{ ToolName }}", "{{ ToolVersion }}")]
     public partial class {{ ClassModel.ClassName }}: IAppSettingsConfig<{{ ClassModel.ClassName }}> 
     {

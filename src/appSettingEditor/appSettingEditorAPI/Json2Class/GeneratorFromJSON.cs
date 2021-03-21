@@ -19,7 +19,7 @@ namespace RoslynSettingEditor.Json2Class
             {
                 classModels = new List<ClassModel>();
                 var jsonElement = json.RootElement;
-                ResolveTypeRecursive(classModels, jsonElement, rootTypeName, null);
+                ResolveTypeRecursive(classModels, jsonElement, rootTypeName.Replace(".","_"), null);
             }
             var appSettingsClass = classModels.First(it => it.parentClass == null);
             var t = EmbeddedResource.GetContent(NameFile);

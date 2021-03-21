@@ -4,7 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup> 
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
   <PropertyGroup>
@@ -14,7 +14,11 @@
   <ItemGroup>
     <ProjectReference Include="..\appSettingEditorAPI\appSettingsEditorAPI.csproj" OutputItemType="Analyzer" />
     <ProjectReference Include="..\appSettingsEditor\appSettingsEditor.csproj" />
-    <AdditionalFiles Include="appsettings.json">
+    <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="generateAPI" />
+    <AdditionalFiles Include="appsettings.json" generateAPI="true" >
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <AdditionalFiles Include="appsettings.Development.json" >
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AdditionalFiles>
 

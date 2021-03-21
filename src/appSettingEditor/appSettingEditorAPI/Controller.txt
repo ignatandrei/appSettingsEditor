@@ -19,7 +19,7 @@ using System.Threading.Tasks;
 
 namespace {{ NamespaceName }}.Controllers
 {
-    [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    //[global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("{{ ToolName }}", "{{ ToolVersion }}")]    
     [Route("api/[controller]")]
     [ApiController]
@@ -39,7 +39,7 @@ namespace {{ NamespaceName }}.Controllers
             BeforeGet(settings);
             return settings;
         }
-
+        //maybe have a get with the settings name, if there are more than 1?
         [HttpPost()]
         public bool Post([FromServices]IConfiguration config, {{ appSettingsClass.ClassName }}  saveData){
             
@@ -48,7 +48,7 @@ namespace {{ NamespaceName }}.Controllers
                 {
                     WriteIndented = true
                 }) ;
-            System.IO.File.WriteAllText("{{ appSettingsClass.ClassName }}.json",data);
+            System.IO.File.WriteAllText("{{fullNameFile}}.json",data);
             return true;
         }
     }
