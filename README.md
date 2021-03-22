@@ -54,7 +54,7 @@ endpoints.MapSettingsView <appsettings>(Configuration);
 });
 ```
 
-      If you want to handle security, add
+If you want to handle security, add
 
 ```csharp
 public partial class appsettingsController : ControllerBase
@@ -71,4 +71,12 @@ public partial class appsettingsController : ControllerBase
 }
 ```
 	  
-      
+## Known problems and solving
+
+1. I have a versioning API .       
+
+
+2. I have another file name app_custom_settings.json, not appsettings.json
+
+
+3. I have multiple appsettings.json
