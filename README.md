@@ -2,15 +2,18 @@
 app settings editor - powered by Roslyn
 
 ## What it does
-	Autogenerates controller API for appsettings.json
-	
-	Optional, it has also an endpoint for a HTML GUI editor
 
-	This is how swagger looks :
+Autogenerates controller API for appsettings.json
+
+Optional, it has also an endpoint for a HTML GUI editor
+
+This is how swagger looks :
+
+<img src='https://github.com/ignatandrei/appSettingsEditor/blob/main/docs/images/swagger.png?raw=true' />
+
+And you can browse to /settingsUI to have this editor ( powered by https://github.com/json-editor/json-editor )
 	
-	
-	And you can browse to /settingsUI to have this editor ( powered by https://github.com/json-editor/json-editor )
-	
+<img src='https://github.com/ignatandrei/appSettingsEditor/blob/main/docs/images/settingsui.png?raw=true' />
 	
 
 
