@@ -1,16 +1,27 @@
 # appSettingsEditor
 app settings editor - powered by Roslyn
 
+## What it does
+	Autogenerates controller API for appsettings.json
+	
+	Optional, it has also an endpoint for a HTML GUI editor
 
- ** C# 9.0 ONLY **
+	This is how swagger looks :
+	
+	
+	And you can browse to /settingsUI to have this editor ( powered by https://github.com/json-editor/json-editor )
+	
+	
 
-      Autogenerates controller API for appsettings.json
-      Add 2 NUGET  references:
 
-      appSettingEditorAPI
-      appSettingsEditor
+## How to use 
 
-	The csproj looks like this
+  Add 2 NUGET  references:
+
+  appSettingEditorAPI
+  appSettingsEditor
+
+For your convenience, please add to the csproj :
 	
 	
 ```xml
@@ -30,7 +41,7 @@ app settings editor - powered by Roslyn
 
 ```
 
-If you want to see a GUI for settings , please do
+If you want to see a GUI for settings ( /settingsUI) , please do
 	
 ```csharp
 app.UseEndpoints(endpoints =>
