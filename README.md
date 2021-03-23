@@ -73,10 +73,47 @@ public partial class appsettingsController : ControllerBase
 	  
 ## Known problems and solving
 
-1. I have a versioning API .       
+### I have a versioning API .      
+
+Add this to Startup.cs , 
+```csharp
+public void ConfigureServices(IServiceCollection services)
+services.AddApiVersioning(
+it =>
+{
+    it.AssumeDefaultVersionWhenUnspecified = true;
+    it.DefaultApiVersion = new ApiVersion(1,0);
+}
+);
+```
 
 
-2. I have another file name app_custom_settings.json, not appsettings.json
+### I have another file name app_custom_settings.json, not appsettings.json
+
+Make the modifications below:
+In the csproj
+```xml
+<ItemGroup>
+    <PackageReference Include="appSettingsEditor" Version="2021.3.21.2300" />
+    <PackageReference Include="appSettingsEditorAPI" Version="2021.3.21.2300" />
+    <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="generateAPI" />
+    <AdditionalFiles Include="app_custom_setting.json" generateAPI="true">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
+  </ItemGroup>
+  <PropertyGroup>
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+    <CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)Generated</CompilerGeneratedFilesOutputPath>
+  </PropertyGroup>
+```
+
+In the startup.cs
+```csharp
+appSettingsEditor.Extensions.MapSettingsView<app_custom_setting>(endpoints, Configuration,"app_custom_setting.json","/api/app_custom_setting");
+```
 
 
-3. I have multiple appsettings.json
+
+### I have multiple appsettings.json
+
+This is not supported yet for the GUI. Please make an issue and describe your problem
