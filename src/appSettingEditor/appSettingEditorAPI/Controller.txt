@@ -17,6 +17,8 @@ using Microsoft.Extensions.Logging;
 using System.Linq;
 using System.Threading.Tasks;
 using {{ NamespaceName }}.SettingsJson;
+using System.Text.Json;
+using System.Text.Encodings.Web;
 namespace {{ NamespaceName }}.Controllers
 {
     //[global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -55,9 +57,10 @@ namespace {{ NamespaceName }}.Controllers
         [HttpPost()]
         public bool Post([FromServices]IConfiguration config, {{ appSettingsClass.ClassName }}  saveData){
             
-            BeforeSave(saveData, LoadFromConfig(config));
-            var data = System.Text.Json.JsonSerializer.Serialize(saveData, new System.Text.Json.JsonSerializerOptions()
+            BeforeSave(saveData, Get(config));
+            var data = JsonSerializer.Serialize(saveData, new System.Text.Json.JsonSerializerOptions()
                 {
+                    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
                     WriteIndented = true
                 }) ;
             System.IO.File.WriteAllText("{{fullNameFile}}.json",data);
