@@ -50,7 +50,7 @@ If you want to see a GUI for settings ( /settingsUI) , please do
 app.UseEndpoints(endpoints =>
 {
 endpoints.MapControllers(); // add next line
-endpoints.MapSettingsView <appsettings>(Configuration);
+endpoints.MapSettingsView <SettingsJson.appsettings>(Configuration);
 });
 ```
 
